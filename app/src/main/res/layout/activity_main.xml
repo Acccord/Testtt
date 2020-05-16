@@ -15,4 +15,25 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/mBtnStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="上电"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/mBtnStop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="掉电"
+        app:layout_constraintTop_toBottomOf="@+id/mBtnStart" />
+
+    <Button
+        android:id="@+id/mBtnConn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="连接"
+        app:layout_constraintTop_toBottomOf="@+id/mBtnStop" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
