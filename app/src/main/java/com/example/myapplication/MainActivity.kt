@@ -9,6 +9,7 @@ import com.rfid.RFIDReaderHelper
 import com.rfid.ReaderConnector
 import com.rfid.rxobserver.RXObserver
 import com.rfid.rxobserver.bean.RXInventoryTag
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 /**
@@ -52,10 +53,23 @@ class MainActivity : AppCompatActivity() {
                 Thread.sleep(500)
 
                 mReader?.realTimeInventory(0xff.toByte(), 0x01.toByte())
-
             } catch (e: Exception) {
                 e.printStackTrace()
             }
+
+        }
+
+        mBtnRead.setOnClickListener {
+            mReader?.fastSwitchAntInventory(0xff.toByte(), 0x00.toByte(),0x01.toByte(),
+                0x01.toByte(),0x01.toByte(),
+                0x02.toByte(),0x01.toByte(),
+                0x03.toByte(),0x01.toByte(),
+                0x04.toByte(),0x01.toByte(),
+                0x05.toByte(),0x01.toByte(),
+                0x09.toByte(),0x01.toByte(),
+                0x09.toByte(),0x01.toByte(),
+                0xff.toByte(),0x01.toByte()
+            )
 
         }
     }
@@ -66,7 +80,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun onInventoryTagEnd(endTag: RXInventoryTag.RXInventoryTagEnd?) {
-            mReader?.realTimeInventory(0xff.toByte(), 0x01.toByte())
+            //mReader?.realTimeInventory(0xff.toByte(), 0x01.toByte())
         }
     }
 
