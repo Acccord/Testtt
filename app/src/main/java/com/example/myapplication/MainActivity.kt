@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             try {
                 mReader = RFIDReaderHelper.getDefaultHelper()
                 mReader?.registerObserver(rxObserver)
-                mReader?.setRXTXListener(listener)
+                //mReader?.setRXTXListener(listener)
 
                 Thread.sleep(500)
 
@@ -138,27 +138,27 @@ class MainActivity : AppCompatActivity() {
 //        }
 //    }
 
-    //6.高级
-    //(1).监听发送和接收数据，以及模块的链接状态。
-    // 实现RXTXListener接口将其设置到RFIDReaderHelper类中
-    val listener = object : RXTXListener {
-        override fun reciveData(p0: ByteArray?) {
-            ////获取从RFID模块接收到的数据
-            val data = String(p0!!)
-            Log.e("Vii", "接收数据 = $data")
-        }
-
-        override fun onLostConnect() {
-            //链接断开会回调该方法。
-            Log.e("Vii", "连接成功")
-        }
-
-        override fun sendData(p0: ByteArray?) {
-            //获取发送到RFID模块的数据
-            val data = String(p0!!)
-            Log.e("Vii", "发送数据 = $data")
-        }
-    }
+//    //6.高级
+//    //(1).监听发送和接收数据，以及模块的链接状态。
+//    // 实现RXTXListener接口将其设置到RFIDReaderHelper类中
+//    val listener = object : RXTXListener {
+//        override fun reciveData(p0: ByteArray?) {
+//            ////获取从RFID模块接收到的数据
+//            val data = String(p0!!)
+//            Log.e("Vii", "接收数据 = $data")
+//        }
+//
+//        override fun onLostConnect() {
+//            //链接断开会回调该方法。
+//            Log.e("Vii", "连接成功")
+//        }
+//
+//        override fun sendData(p0: ByteArray?) {
+//            //获取发送到RFID模块的数据
+//            val data = String(p0!!)
+//            Log.e("Vii", "发送数据 = $data")
+//        }
+//    }
 
 //    override fun onDestroy() {
 //        super.onDestroy()
